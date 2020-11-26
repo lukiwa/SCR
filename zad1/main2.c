@@ -36,7 +36,6 @@ int main(int argc, char **argv)
         const int data_pack_size = 5;
         char buffer[buffer_length];
 
-        close(fd[1]);
         while (read(fd[0], buffer, data_pack_size) > 1)
         {
             write(1, "#", 1);
@@ -51,7 +50,6 @@ int main(int argc, char **argv)
     else
     {
         //parent
-        close(fd[0]);
 
         char to_send_buffer[buffer_length];
 
